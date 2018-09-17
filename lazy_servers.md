@@ -187,10 +187,10 @@ Other options include `rsync` or some third party syncing app such as Dropbox, N
 
 ## Advices and conventions
 
-**File and directory names**: never put spaces, commas or weird things in your files and directory's name.
-**Always have a configuration file** where one can parametrize the environment accordingly. This way, you don't need to update all your code if you want to change some configuration in the server (for example, the number of cores to use or the maximum memory to use, or the time to execute). Another option is using command line arguments.
-**Always separate code from data**: data usually doesn't change often. Code does. This way you only get to change a small file and it's easier to track changes.
-**Write your most known commands somewhere**: that way you just need to copy and paste and not remember everything every time.
+* **File and directory names**: never put spaces, commas or weird things in your files and directory's name.
+* **Always have a configuration file** where one can parametrize the environment accordingly. This way, you don't need to update all your code if you want to change some configuration * in the server (for example, the number of cores to use or the maximum memory to use, or the time to execute). Another option is using command line arguments.* 
+* **Always separate code from data**: data usually doesn't change often. Code does. This way you only get to change a small file and it's easier to track changes.
+* **Write your most known commands somewhere**: that way you just need to copy and paste and not remember everything every time.
 
 ## Virtual Private Network
 
