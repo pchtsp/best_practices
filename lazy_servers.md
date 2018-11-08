@@ -175,15 +175,57 @@ The `tail` command just shows the last N lines of a file. When providing the `-f
 
 To close this visualization, one needs to do the famous `Ctrl + C`
 
+## Getting information from your server
+
+**Memory**:
+
+    free -mh
+
+**CPU**:
+
+    lscpu
+
+**distribution**:
+
+    cat /etc/*release
+
+More information on getting the OS information in this [*very complete page*s](http://whatsmyos.com).
+
 ## Moving things between machine and server
 
-With `scp` one can move one file or an entire directory from and to the server. This is already useful. But not enough.
+For simple use cases (few files), `scp` one can move one file or an entire directory from and to the server. This is already useful. But not enough.
 
-There are other options to sync things between the two.
+An example using this would be:
 
-I recommend `git`. With git you can easily push and pull code from a git server. This way, you know you get the correct version of your code. This tutorial is not a git tutorial, you'll have to find some other resources. Git has many more advantages that make it a strong recommendation.
+    scp -r f.peschiera@serv-cluster1:/home/disc/f.peschiera/Documents/projects/ROADEF2018/results/clust1_20180922_venv ./
 
-Other options include `rsync` or some third party syncing app such as Dropbox, NextCloud, Google Drive, etc.
+The first argument is the source (that is located in the server) and the second argument (`./`) is the present location in the command line. So I'm saying: bring that directory over there, "here".
+
+### Moving code
+
+I recommend `git` to move code. With git you can easily push and pull code from a git server. This way, you know you get the correct version of your code. This tutorial is not a git tutorial, you'll have to find some other resources. Git has many more advantages that make it a strong recommendation.
+
+Some very basic examples:
+
+    git push origin master
+
+sends your last committed changes to the git server's main branch.
+
+    git pull origin master
+
+brings the last changes from the main branch to the pc from which you execute it.
+
+### Moving data
+
+I recommend `rsync` to move data files. With this application you can tell to bring or send a given directory and and only the files that have changed will move.
+
+For example I use:
+    
+    rsync -rav -e ssh --include '*/' --exclude='formulation.lp' f.peschiera@serv-cluster1:/home/disc/f.peschiera/Documents/projects/optima/results/* ./
+
+to bring sync all the results I got from the last executions to the current directory in my pc.
+
+Other options include some third party syncing app such as Dropbox, NextCloud, Google Drive, etc.
 
 ## Advices and conventions
 
