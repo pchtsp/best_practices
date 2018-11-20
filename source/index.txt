@@ -7,8 +7,7 @@ This is just some notes I have that can help teach basic IT things for people th
    :maxdepth: 2
    
    lazy_servers
-   :caption: Contents:
-   ...
+
 
 
 
