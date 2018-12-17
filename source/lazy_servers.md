@@ -1,7 +1,3 @@
----
-title: "Lazy's guide to linux commands"
-date: "September, 2018"
----
 
 The lazy's guide to linux, servers and executing stuff in them. And getting the results back, of course. If not, why would you even bother... anyways.
 

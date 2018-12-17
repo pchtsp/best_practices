@@ -1,0 +1,20 @@
+Best IT practices
+=========================================
+
+This is just some notes I have that can help teach basic IT things for people that do not have the time to search over 10 different pages and 50 stackoverflow questions.
+
+.. toctree::
+   :caption: Table of Contents
+   :maxdepth: 2
+   
+   lazy_servers
+
+
+
+
+Indices and tables
+==================
+
+* :ref:`genindex`
+* :ref:`modindex`
+* :ref:`search`
