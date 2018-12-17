@@ -56,8 +56,8 @@ There are other commands that are very easy to understand. Below the table with 
 
 Command | what it does | example
 ------ | ------ | ------
-cp | copys a file  | cp homework/myhomework.txt myhomework_copy.txt
-cp -r \* | copys a  directory | cp homework homework_copy
+cp | copies a file  | cp homework/myhomework.txt myhomework_copy.txt
+cp -r \* | copies a  directory | cp homework homework_copy
 rm | deletes a file | rm homework/myhomework.txt
 mkdir | creates a directory | mkdir homework
 cd | enter a directory | cd homework
@@ -153,7 +153,11 @@ If you want a more fancy version of this tool (in case it's installed) you can d
 
 Anyway, you can see the processes that are running and the resources they consume. The first column in the table shows the process id (not a surprise: it's called *PID*).
 
-If you want to kill the process you do:
+Another alternative, if you know part of the name of the application *APPNAME* you want to kill (i.e. `spotify`, `python`, `cplex`), you can do the following:
+
+    ps aux | grep APPNAME
+
+If you want to kill the process with PID *PID_NUMBER* you do:
 
     kill PID_NUMBER
 
@@ -164,6 +168,12 @@ In the rare cases it resists to death, you can try:
 You should always return to see the processes to confirm your process is dead!
 
     top
+
+or 
+
+    ps aux | grep APPNAME
+
+## Monitoring log files
 
 In the case your process is writing something into a log file, you can monitor the contents actively.
 
