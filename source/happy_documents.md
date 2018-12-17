@@ -13,6 +13,8 @@ To produce good documentation, both style and structure of content is important.
 
 The [Sphinx](http://www.sphinx-doc.org/en/stable/) documentation engine is quite good.
 
+More detailed examples [here](https://pythonhosted.org/an_example_pypi_project/sphinx.html).
+
 Options for styling are markdown or reStructuredText. Apparently, the latter is the recommended standard due to the fact that the first one is not even a standard. Sphinx has support for both.
 
 This guide was created in Sphinx and markdown.
