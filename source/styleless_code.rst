@@ -1,9 +1,10 @@
----
-title: "Styleless guide to organize code"
-date: "December, 2018"
----
++++++++++++++++++++
+Styleless code
++++++++++++++++++++
 
-# Introduction
+
+Introduction
+************************
 
 This document attempts to present some standard ways to organize, document and test code in R and python.
 
@@ -11,21 +12,23 @@ As always, it's better to stand on the shoulders of giants. Or, in the absence o
 
 The main guides we cite are the following:
 
-* python: [hitchhiker's guide to python](https://docs.python-guide.org/). 
-* R: [building R packages](http://r-pkgs.had.co.nz/).
+* python: `hitchhiker's guide to python <https://docs.python-guide.org/>`_. 
+* R: `building R packages <http://r-pkgs.had.co.nz/>`_.
 
 Other resources will be cited at each section. I'm going to paste examples of each resource so as to avoid having to jump everytime to the source. Having said that, it's *highly recommended* to go to the link to read in detail about each functionality at least once.
 
-# Structure
+Structure
+************************
 
-## python
+python
+===================
 
-The guidelines [mentioned here](https://docs.python-guide.org/writing/structure/) have an example in a [github repository](https://github.com/kennethreitz/samplemod). The python generally agreed guidelines are found [PEP8](https://www.python.org/dev/peps/pep-0008/). Finally, [google's python style guide](http://google.github.io/styleguide/pyguide.html) and [this](https://docs.python-guide.org/writing/style/) show the style.
+The guidelines `mentioned here <https://docs.python-guide.org/writing/structure/>`_ have an example in a `github repository <https://github.com/kennethreitz/samplemod>`_. The python generally agreed guidelines are found `PEP8 <https://www.python.org/dev/peps/pep-0008/>`_. Finally, `google's python style guide <http://google.github.io/styleguide/pyguide.html>`_ and `this <https://docs.python-guide.org/writing/style/>`_ show the style.
 
 Our projects usually demand some additional directories (that are sometimes shown as optional in the examples given above). For example: data, reports, etc.
 As always the directories in each project will vary depending on the specific requirements of the project.
 
-Based on these guides and our additional particular demands, I show an example of python project named `sample`:
+Based on these guides and our additional particular demands, I show an example of python project named `sample`::
 
     README.rst
     LICENSE
@@ -42,16 +45,17 @@ Based on these guides and our additional particular demands, I show an example o
     scripts/  # => python executable scripts that make use of the sample package.
     data/  # => raw processed input data
 
-## R
+R
+===================
 
-In R, [there's Hadley Wickham's bible for packages](http://r-pkgs.had.co.nz/) that shows how to structure R packages (not necessarily R projects).
-Other resources I found interesting are [this blog post](https://chrisvoncsefalvay.com/structuring-r-projects/).
+In R, `there's Hadley Wickham's bible for packages <http://r-pkgs.had.co.nz/>`_ that shows how to structure R packages (not necessarily R projects).
+Other resources I found interesting are `this blog post <https://chrisvoncsefalvay.com/structuring-r-projects/>`_.
 
 Both resources show several alternatives to naming and structure so feel free to check them in case an alternative convention suits your project better. Having said that, if an r package wants to be built, it's better to follow Hadley Wickham's guide.
 
-Also, see [Google's R guidelines](https://google.github.io/styleguide/Rguide.xml) for more details on code style.
+Also, see `Google's R guidelines <https://google.github.io/styleguide/Rguide.xml>`_ for more details on code style.
 
-An example proposal would be the following:
+An example proposal would be the following::
 
     README.rst
     LICENSE
@@ -66,11 +70,12 @@ An example proposal would be the following:
     inst/
     exec/
 
-## Mixed
+Mixed
+===================
 
 If a project involves more than one language, the structure should be as similar as possible to the language's individual convention. Of course, some documentation and some general directories (`data` for example) may be better suited in the root directory.
 
-For example, the following could be a way to structure a multi-language project while keeping a common doc and data. An option could be to rename the R directory inside the R folder.
+For example, the following could be a way to structure a multi-language project while keeping a common doc and data. An option could be to rename the R directory inside the R folder::
 
     LICENSE
     .gitignore
@@ -96,15 +101,17 @@ For example, the following could be a way to structure a multi-language project 
     R/inst/
     R/exec/    
 
-
-# Documentation
+Documentation
+************************
 
 There are many levels of documentation. In this document, only code comments will be mentioned. A separate section dedicated to technical documentation and reports should be available.
 There is the technical documentation, code comments and reports.
 
-In **R**, [Roxygen](http://r-pkgs.had.co.nz/man.html) is shown to produce standardized comments that can later be compiled into package documentation.
+In **R**, `Roxygen <http://r-pkgs.had.co.nz/man.html>`_ is shown to produce standardized comments that can later be compiled into package documentation.
 
 A brief example taken from the document:
+
+.. code-block:: R
 
     #' Add together two numbers.
     #' 
@@ -119,23 +126,30 @@ A brief example taken from the document:
     }
 
 
-**Python** comments are done via [docstrings](https://www.python.org/dev/peps/pep-0287/). Pycharm (see *IDE*) uses reST formatting and it autocompletes when writing the three commas inside a function.
-The following example is taken from [this SO](https://stackoverflow.com/questions/3898572/what-is-the-standard-python-docstring-format) post:
+**Python** comments are done via `docstrings <https://www.python.org/dev/peps/pep-0287/>`_. Pycharm (see *IDE*) uses reST formatting and it autocompletes when writing the three commas inside a function.
+The following example is taken from `this SO post <https://stackoverflow.com/questions/3898572/what-is-the-standard-python-docstring-format>`_:
 
-    """
-    This is a reST style.
+.. code-block:: python
 
-    :param param1: this is a first param
-    :param param2: this is a second param
-    :returns: this is a description of what is returned
-    :raises keyError: raises an exception
-    """
+    def add(x, y):
+        """
+        Add together two numbers.
 
-# Testing
+        :param x: A number.
+        :param y: A number.
+        :returns: The sum of x and y.
+        :raises keyError: raises an exception
+        """
+        return x + y
 
-python has the [unittest](https://docs.python.org/2/library/unittest.html) library, explained also [here](https://docs.python-guide.org/writing/tests/).
+Testing
+*********
+
+python has the `unittest <https://docs.python.org/2/library/unittest.html>`_ library, explained also `here <https://docs.python-guide.org/writing/tests/>`__.
 
 A minimal example mentioned in the first link:
+
+.. code-block:: python
 
     import unittest
 
@@ -147,9 +161,11 @@ A minimal example mentioned in the first link:
     if __name__ == '__main__':
         unittest.main()
 
-R has the [testthat](https://cran.r-project.org/web/packages/testthat/index.html) library, explained [here](http://r-pkgs.had.co.nz/tests.html).
+R has the `testthat <https://cran.r-project.org/web/packages/testthat/index.html>`_ library, explained `here <http://r-pkgs.had.co.nz/tests.html>`_.
 
 An minimal example mentioned in the second link:
+
+.. code-block:: R
 
     context("String length")
     library(stringr)
@@ -160,10 +176,11 @@ An minimal example mentioned in the second link:
       expect_equal(str_length("abc"), 3)
     })
 
-# IDE
+IDE
+************************
 
-[pycharm](https://www.jetbrains.com/pycharm/download/) for python.
-[RStudio](https://www.rstudio.com/products/rstudio/download/) for R.
+`pycharm <https://www.jetbrains.com/pycharm/download/>`_ for python.
+`RStudio <https://www.rstudio.com/products/rstudio/download/>`_ for R.
 
 Both are cross-platform, powerful, specialized, easy to use and quite similar one to the other.
 They have also a free open-source version.

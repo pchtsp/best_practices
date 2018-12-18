@@ -1,16 +1,16 @@
-Best IT practices
+Best practices
 =========================================
 
-This is just some notes I have that can help teach basic IT things for people that do not have the time to search over 10 different pages and 50 stackoverflow questions.
+This is just some notes I have that can help get basic IT / programming things for people that do not have the time to search over 10 different pages and 50 stackoverflow questions.
+I focus on Linux bash, R and python for the time being. The idea is not to make it for everything. Only for things I care and know.
 
 .. toctree::
    :caption: Table of Contents
    :maxdepth: 2
    
    lazy_servers
-   happy_documents
    styleless_code
-
+   happy_documents
 
 Indices and tables
 ==================
