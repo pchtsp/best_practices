@@ -128,7 +128,7 @@ Then you can check you wrote it correctly::
 
 **Stopping the execution of your script**. This one is easy: you just to ``Ctrl + C``.
 
-**If you want to avoid blocking the terminal window with your script**. Imagine you execute you script in the server but you want to go home. You don't want to leave your machine on. Or you don't want to risk the connection to the server to break. Or you just want to use the terminal to do other things (like execute more scripts). You just need to add ``&`` at the end of the script::
+**If you want to avoid blocking the terminal window with your script**. Imagine you execute you script in the server but you want to go home. You don't want to leave your machine on. Or you don't want to risk the connection to the server to break. Or you just want to use the terminal to do other things (like execute more scripts). You just need to add ``&`` at the end of the script and ``nohup`` at the beginning::
 
     nohup python script.py &
 
