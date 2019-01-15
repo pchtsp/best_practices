@@ -30,7 +30,7 @@ Basic commands
 
 So, if you want to create a new directory that is named 'homework' you do::
 
-	mkdir homework
+    mkdir homework
 
 Now if we do ``ls`` (or the shortcut for the *really lazy* ``l``) we'll see the folder::
 
@@ -56,19 +56,10 @@ Here you enter a new "page" and you can go up and down with arrows. To close it 
 
 There are other commands that are very easy to understand. Below the table with an example:
 
-.. Command | what it does | example
-.. ------ | ------ | ------
-.. cp | copies a file  | cp homework/myhomework.txt myhomework_copy.txt
-.. cp -r \* | copies a  directory | cp homework homework_copy
-.. rm | deletes a file | rm homework/myhomework.txt
-.. mkdir | creates a directory | mkdir homework
-.. cd | enter a directory | cd homework
-.. cd .. | go up one directory | cd ..
-.. touch | creates an empty file | touch homework/myhomework.txt
-.. scp | like cp but between different machines | scp user@server:PATH_TO_FILE LOCAL_PATH_TO_FILE
-.. cat | show the contents of a file | cat homework/myhomework.txt
-.. tail | like cat but only shows the last lines | tail homework/myhomework.txt
-.. echo | show text in the console | echo $HOME
+.. csv-table:: Simple commands
+   :file: table_commands.csv
+   :widths: 10, 30, 60
+   :header-rows: 1
 
 \* I'm not going to put the ``-r`` everywhere. Usually when dealing with directories, you kinda need to put it. Don´t worry, Linux will tell you if not.
 
@@ -139,9 +130,13 @@ Then you can check you wrote it correctly::
 
 **If you want to avoid blocking the terminal window with your script**. Imagine you execute you script in the server but you want to go home. You don't want to leave your machine on. Or you don't want to risk the connection to the server to break. Or you just want to use the terminal to do other things (like execute more scripts). You just need to add ``&`` at the end of the script::
 
-    python script.py &
+    nohup python script.py &
 
 This will create a process id (and will show the number to you). This number is important! In case you want to later stop the process, for example. Because the ``Ctrl + C`` doesn't work any more! To do this see section *Monitoring processes and killing them*.
+
+Combining both of the last things, you get the following standard way to execute something and recover the console::
+
+    nohup python script.py > homework/myhomework.txt &
 
 Monitoring processes and killing them
 ************************************************

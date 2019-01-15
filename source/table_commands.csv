@@ -1,0 +1,12 @@
+Command, what it does, example
+cp, copies a file, cp homework/myhomework.txt myhomework_copy.txt
+cp -r \*, copies a directory, cp homework homework_copy
+rm, deletes a file, rm homework/myhomework.txt
+mkdir, creates a directory, mkdir homework
+cd, enter a directory, cd homework
+cd .., go up one directory, cd ..
+touch, creates an empty file, touch homework/myhomework.txt
+scp, like cp but between different machines, scp user@server:PATH_TO_FILE LOCAL_PATH_TO_FILE
+cat, show the contents of a file, cat homework/myhomework.txt
+tail, like cat but only shows the last lines, tail homework/myhomework.txt
+echo, show text in the console, echo $HOME
