@@ -6,9 +6,9 @@ CommonMark==0.5.4
 docutils==0.14
 idna==2.7
 imagesize==1.1.0
-Jinja2==2.10
+Jinja2==2.10.1
 Markdown==2.6.11
-MarkupSafe==1.1.0
+MarkupSafe==1.1.1
 packaging==18.0
 Pygments==2.2.0
 pyparsing==2.3.0
@@ -20,4 +20,4 @@ snowballstemmer==1.2.1
 Sphinx==1.8.2
 sphinx-markdown-tables==0.0.9
 sphinxcontrib-websupport==1.1.0
-urllib3==1.24.1
+urllib3==1.25.3
