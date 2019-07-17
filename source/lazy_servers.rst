@@ -2,14 +2,14 @@
 Lazy Servers
 +++++++++++++++++++
 
-The lazy's guide to linux, servers and executing stuff in them. And getting the results back, of course. If not, why would you even bother... anyways.
+The lazy's guide to linux, servers and executing stuff in them. And getting the results back, of course. If not, why would you even bother... anyway.
 
 Why though?
 ************************
 
 This terminal is useful because in case you do not have a directory explorer (the thing were you see the boxes with files and directories), you need to be able to do everything you did there but via a terminal.
 
-TODO.
+Also, it allows for automation (which saves time and avoids errors) and is a lot more standard across operating systems than using graphical user interfaces.
 
 Introduction and requisites
 ****************************
@@ -32,7 +32,7 @@ So, if you want to create a new directory that is named 'homework' you do::
 
     mkdir homework
 
-Now if we do ``ls`` (or the shortcut for the *really lazy* ``l``) we'll see the folder::
+Now if we do ``ls`` (or the shortcut for the *really lazy*: ``l``) we'll see the folder::
 
     ls
 
@@ -40,7 +40,7 @@ Although I usually prefer the following format because it shows everything impor
 
     ls -lha
 
-To create an empty fil inside the folder (why would you want that you say? to make the examples below I answer)::
+To create an empty file inside the folder (why would you want that you say? to make the examples below I answer)::
 
     touch homework/myhomework.txt
 
@@ -68,15 +68,15 @@ Connecting to a server
 
 To connect to a server you need a couple of things:
 
-1. Be able to locate the server in your network (or over the Internet). Or in other words, the server needs to be accessible.
-2. Have a username with access to this server (and the password: no passport needed).
-3. Have ``ssh`` installed in your pc (and running in the server but that's usually not your job). It usually comes with Linux.
+1. Be able to locate the server in your network (or over the Internet). Or in other words, the server needs to be accessible by your pc.
+2. Have a username with access to this server (and the password).
+3. Have ``ssh`` installed in your pc (and running in the server but that's usually not your job). It usually comes with Linux so this is already taken care of.
 
 To connect to a server you do the following::
 
     ssh USERNAME@SERVER
 
-For example if I want to connect to server I´d do::
+For example if I want to connect to server named ``serv-cluster1`` and my username is ``f.peschiera`` I´d do::
 
     ssh f.peschiera@serv-cluster1
 
@@ -217,7 +217,7 @@ The first argument is the source (that is located in the server) and the second 
 Moving code
 ===================
 
-I recommend ``git`` to move code. With git you can easily push and pull code from a git server. This way, you know you get the correct version of your code. This tutorial is not a git tutorial, you'll have to find some other resources. Git has many more advantages that make it a strong recommendation.
+I recommend ``git`` to move code. With git you can easily push and pull code from a git server. This way, you know you get the correct version of your code. This tutorial is not a git tutorial, you'll have to find some other resources, like for example the `official documentation <https://git-scm.com/doc>`_. Git has many more advantages that make it a strong recommendation.
 
 Some very basic examples::
 
@@ -255,6 +255,13 @@ Virtual Private Network
 
 You'd use a VPN to watch the World Cup matches that are not televised in France (such as Peru - Australia). Another use is to get inside the university network while you're outside. This can be useful to connect to a server that is only accessible from within the network of the university.
 
-The configuration for a VPN varies from service to service.
+The configuration for a VPN varies from service to service so you should actually read the detailed instructions in the organization you belong to.
 
-TODO: finish this.
+As a general rule, you usually need to follow several steps similar to the following:
+
+1. Install some software (we're naming it ``Client``) in the computer from where you'd be accessing. Some examples are "GlobalProtect", "Start Securepoint SSL VPN".
+2. Download some configuration file from a secure place in the network and load it in said software.
+3. Download and install some software in a device, usually a phone (we're calling it ``Authenticator``). Some examples are "Duo" and "Free OTP Authenticator".
+4. Use the ``Client`` to connect to the network you configured. When requested a password, use the information provided by the ``Authenticator``.
+
+If this works, you will be able to access the resources in the remote network as if you were connected inside.

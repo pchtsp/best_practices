@@ -20,21 +20,28 @@ More detailed examples `here <https://pythonhosted.org/an_example_pypi_project/s
 
 Options for styling are markdown or reStructuredText. Apparently, the latter is the recommended standard due to the fact that the first one is not even a standard. Sphinx has support for both.
 
-This guide was created in Sphinx and markdown.
+This guide was created in Sphinx and reStructured Text (rst).
 
 Structure
 ===================
 
 Technical documentation can vary considerable between one project and another. An example of documentation for a mathematical-model-based application is the following.
 
-.. <!-- TODO -->
+TODO: finish this.
 
 Reports
+************************
 
 Interactive
 ===================
 
+Use RMarkdown!
+
 Formats
 ===================
+
+Source files: Restructured Text, Markdown, Latex.
+
+Output formats: html, Word, latex.
 
  ..... 
