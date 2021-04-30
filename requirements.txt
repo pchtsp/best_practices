@@ -20,4 +20,4 @@ snowballstemmer==1.2.1
 Sphinx==1.8.2
 sphinx-markdown-tables==0.0.9
 sphinxcontrib-websupport==1.1.0
-urllib3==1.25.3
+urllib3==1.25.8
